@@ -21,7 +21,7 @@ export class RatingController {
   getById = async (req: Request, res: Response, next: NextFunction) => {
     try {
       const { id } = req.params;
-      if (!id || isNaN(parseInt(id))) {
+      if (!id || typeof id !== 'string' || isNaN(parseInt(id))) {
         const error: any = new Error('Invalid rating ID');
         error.statusCode = 400;
         throw error;
