@@ -1,84 +1,79 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Get a free hosted Postgres database in seconds: `npx create-db`
-
 generator client {
-  provider = "prisma-client"
-  output   = "../generated/prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "mysql"
+  url      = env("DATABASE_URL")
 }
 
-// 1.1 Tabel: game
 model Game {
-  id             Int           @id @default(autoincrement())
-  title          String        // [cite: 4, 5]
-  slug           String        @unique // [cite: 5]
-  description    String?       @db.Text // [cite: 5]
-  image_url      String?       // [cite: 5]
-  release_year   Int?          // [cite: 5]
-  publisher      String?       // [cite: 5]
-  review_summary String?       @db.Text // [cite: 5]
+  id              Int           @id @default(autoincrement())
+  title           String
+  slug            String        @unique
+  description     String        @db.Text
+  image_url       String
+  release_year    Int
+  publisher       String
+  review_summary  String        @db.Text
+  rating_id       Int
+  rating          Rating        @relation(fields: [rating_id], references: [id])
+  gallery         GameGallery[]
 
-  ratingId       Int           // Relasi ke rating [cite: 7]
-  rating         Rating        @relation(fields: [ratingId], references: [id])
-  galleries      GameGallery[] // Relasi ke game_gallery [cite: 8]
+  @@map("games")
 }
 
-// 1.2 Tabel: game_gallery
 model GameGallery {
   id        Int    @id @default(autoincrement())
-  image_url String // [cite: 10]
-  gameId    Int
-  game      Game   @relation(fields: [gameId], references: [id])
+  image_url String
+  game_id   Int
+  game      Game   @relation(fields: [game_id], references: [id])
+
+  @@map("game_galleries")
 }
 
-// 1.3 Tabel: rating
 model Rating {
   id                     Int                     @id @default(autoincrement())
-  title                  String                  // [cite: 12]
-  summary                String?                 @db.Text // [cite: 12]
-  description            String?                 @db.Text // [cite: 12]
-  image_url              String?                 // [cite: 12]
-  age                    String?                 // [cite: 12]
-  
+  title                  String
+  summary                String                  @db.Text
+  description            String                  @db.Text
+  image_url              String
+  age                    Int
   games                  Game[]
-  contentClassifications ContentClassification[] // Relasi ke content_classification [cite: 14]
+  content_classifications ContentClassification[]
+
+  @@map("ratings")
 }
 
-// 1.4 Tabel: content_classification
 model ContentClassification {
-  id          Int     @id @default(autoincrement())
-  title       String  // [cite: 16]
-  description String? @db.Text // [cite: 16]
-  image_url   String? // [cite: 16]
-  
-  ratingId    Int
-  rating      Rating  @relation(fields: [ratingId], references: [id])
+  id          Int    @id @default(autoincrement())
+  title       String
+  description String @db.Text
+  image_url   String
+  rating_id   Int
+  rating      Rating @relation(fields: [rating_id], references: [id])
+
+  @@map("content_classifications")
 }
 
-// 1.6 Tabel: category_blog
-model CategoryBlog {
-  id    Int    @id @default(autoincrement())
-  title String // [cite: 20]
-  slug  String @unique // [cite: 20]
-  blogs Blog[]
-}
-
-// 1.5 Tabel: blog
 model Blog {
   id          Int          @id @default(autoincrement())
-  title       String       // [cite: 18]
-  slug        String       @unique // [cite: 18]
-  description String?      @db.Text // [cite: 18]
-  image_url   String?      // [cite: 18]
-  updated_at  DateTime     @updatedAt // [cite: 18]
-  
-  categoryId  Int          // category_id -> category_blog [cite: 18]
-  category    CategoryBlog @relation(fields: [categoryId], references: [id])
+  title       String
+  slug        String       @unique
+  description String       @db.Text
+  image_url   String
+  category_id Int
+  category    CategoryBlog @relation(fields: [category_id], references: [id])
+  updated_at  DateTime     @updatedAt
+
+  @@map("blogs")
 }
 
+model CategoryBlog {
+  id    Int    @id @default(autoincrement())
+  title String
+  slug  String @unique
+  blogs Blog[]
 
+  @@map("category_blogs")
+}
