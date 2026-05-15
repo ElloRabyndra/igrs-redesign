@@ -1,0 +1,79 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Game {
+  id              Int           @id @default(autoincrement())
+  title           String
+  slug            String        @unique
+  description     String        @db.Text
+  image_url       String
+  release_year    Int
+  publisher       String
+  review_summary  String        @db.Text
+  rating_id       Int
+  rating          Rating        @relation(fields: [rating_id], references: [id])
+  gallery         GameGallery[]
+
+  @@map("games")
+}
+
+model GameGallery {
+  id        Int    @id @default(autoincrement())
+  image_url String
+  game_id   Int
+  game      Game   @relation(fields: [game_id], references: [id])
+
+  @@map("game_galleries")
+}
+
+model Rating {
+  id                     Int                     @id @default(autoincrement())
+  title                  String
+  summary                String                  @db.Text
+  description            String                  @db.Text
+  image_url              String
+  age                    Int
+  games                  Game[]
+  content_classifications ContentClassification[]
+
+  @@map("ratings")
+}
+
+model ContentClassification {
+  id          Int    @id @default(autoincrement())
+  title       String
+  description String @db.Text
+  image_url   String
+  rating_id   Int
+  rating      Rating @relation(fields: [rating_id], references: [id])
+
+  @@map("content_classifications")
+}
+
+model Blog {
+  id          Int          @id @default(autoincrement())
+  title       String
+  slug        String       @unique
+  description String       @db.Text
+  image_url   String
+  category_id Int
+  category    CategoryBlog @relation(fields: [category_id], references: [id])
+  updated_at  DateTime     @updatedAt
+
+  @@map("blogs")
+}
+
+model CategoryBlog {
+  id    Int    @id @default(autoincrement())
+  title String
+  slug  String @unique
+  blogs Blog[]
+
+  @@map("category_blogs")
+}
