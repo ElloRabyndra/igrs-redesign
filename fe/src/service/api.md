@@ -313,5 +313,6 @@ Field:
 - `content_classification` dapat bernilai `null` jika game tidak memiliki klasifikasi tambahan.
 - Untuk endpoint detail (`/rating/{id}` dan `/game/{slug}`), backend mengembalikan **single object**, bukan array.
 - Data dummy frontend saat ini menggunakan array untuk mempermudah simulasi dan pencarian data.
-- gunakan data di `../mock/data.js` untuk value dari tiap tabel
-- gunakan data di `fe\src\mock\constants.js` untuk value dari content_icon dan image_url
+- gunakan data di `fe\src\assets` untuk value image_url pada game, rating, dan blog
+- gunakan data di `fe\src\assets` untuk value content_icon pada content_classification
+- gunakan data di `fe\src\mock\constants.js` untuk value field yang tersisa `(ex: title,description,slug,review_summary,publisher,summary, date)` dari tiap tabel
