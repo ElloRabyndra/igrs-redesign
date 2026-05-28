@@ -1,4 +1,3 @@
-import React from "react";
 import Navbar from "../layout/Navbar";
 import heroLeft from "../../assets/Hero/hero-left.png";
 import heroRight from "../../assets/Hero/hero-right.png";
