@@ -18,7 +18,7 @@ export const getRatings = async () => {
       throw new Error("Failed to fetch ratings");
     }
 
-    console.log("Success to fetch ratings", await response.json());
+    console.log("Success to fetch ratings");
     return await response.json();
   } catch (error) {
     console.error(error);
@@ -36,7 +36,7 @@ export const getRatingDetail = async (id) => {
       throw new Error("Failed to fetch rating detail");
     }
 
-    console.log("Success to fetch rating detail", await response.json());
+    console.log("Success to fetch rating detail");
     return await response.json();
   } catch (error) {
     console.error(error);
@@ -58,10 +58,7 @@ export const getContentClassifications = async () => {
       throw new Error("Failed to fetch content classifications");
     }
 
-    console.log(
-      "Success to fetch content classifications",
-      await response.json(),
-    );
+    console.log("Success to fetch content classifications");
     return await response.json();
   } catch (error) {
     console.error(error);
@@ -83,7 +80,7 @@ export const getGames = async () => {
       throw new Error("Failed to fetch games");
     }
 
-    console.log("Success to fetch games", await response.json());
+    console.log("Success to fetch games");
     return await response.json();
   } catch (error) {
     console.error(error);
@@ -101,7 +98,7 @@ export const getGameDetail = async (slug) => {
       throw new Error("Failed to fetch game detail");
     }
 
-    console.log("Success to fetch game detail", await response.json());
+    console.log("Success to fetch game detail");
     return await response.json();
   } catch (error) {
     console.error(error);
@@ -123,7 +120,7 @@ export const getBlogs = async () => {
       throw new Error("Failed to fetch blogs");
     }
 
-    console.log("Success to fetch blogs", await response.json());
+    console.log("Success to fetch blogs");
     return await response.json();
   } catch (error) {
     console.error(error);
