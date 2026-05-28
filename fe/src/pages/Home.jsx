@@ -1,13 +1,11 @@
+import React from "react";
+import Hero from "../components/sections/Hero";
+
 const Home = () => {
   return (
-    <section>
-      <h1 className="font-bold text-5xl gradient-text">
-        Welcome to IGRS Redesign Challenge!
-      </h1>
-      <h1 className="mt-2 font-bold text-3xl gradient-accent">
-        Welcome to IGRS Redesign Challenge!
-      </h1>
-    </section>
+    <main className="bg-surface-offwhite min-h-[200vh]">
+      <Hero />
+    </main>
   );
 };
 
