@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { getGameImage, getRatingImage } from "../../../utils/mockHelpers";
 import { ChevronRight } from "lucide-react";
 
@@ -7,7 +8,10 @@ const GameCard = ({ game }) => {
   const ratingImg = getRatingImage(game.rating?.id, game.rating?.image_url);
 
   return (
-    <div className="game-card rounded-[28px] bg-white transition-all duration-300 cursor-pointer relative">
+    <Link
+      to={`/game/${game.id}`}
+      className="game-card rounded-[28px] bg-white transition-all duration-300 cursor-pointer relative block"
+    >
       {/* Game cover */}
       <div className="relative overflow-hidden rounded-[14px] mb-3 aspect-4/5">
         <img
@@ -34,7 +38,7 @@ const GameCard = ({ game }) => {
           />
         )}
       </div>
-    </div>
+    </Link>
   );
 };
 

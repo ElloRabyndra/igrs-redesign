@@ -30,7 +30,7 @@ const Navbar = ({ variant = "default" }) => {
           <img
             src={logoFull}
             alt="IGRS Logo"
-            className="h-10 sm:h-12 md:h-14 object-contain"
+            className="h-10 md:h-12 object-contain"
           />
         </Link>
 
