@@ -33,7 +33,7 @@ const HomeSkeleton = () => {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[...Array(4)].map((_, i) => (
-              <div key={i} className="aspect-[4/5] bg-slate-200/60 rounded-[32px]"></div>
+              <div key={i} className="aspect-4/5 bg-slate-200/60 rounded-[32px]"></div>
             ))}
           </div>
         </section>
