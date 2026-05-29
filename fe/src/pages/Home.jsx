@@ -7,7 +7,7 @@ import ContentWarning from "../components/sections/ContentWarning";
 import BlogPengumuman from "../components/sections/BlogPengumuman";
 import GameRegister from "../components/sections/GameRegister";
 import Footer from "../components/layout/Footer";
-import PageSkeleton from "../components/ui/PageSkeleton";
+import HomeSkeleton from "../components/ui/HomeSkeleton";
 import {
   getRatings,
   getGames,
@@ -46,7 +46,7 @@ const Home = () => {
   }, []);
 
   if (loading) {
-    return <PageSkeleton />;
+    return <HomeSkeleton />;
   }
 
   return (
