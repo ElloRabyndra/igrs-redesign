@@ -35,8 +35,8 @@ const colorGroups = [
   {
     title: "Text Colors",
     colors: [
-      ["Text Secondary", "bg-text-secondary", "#CBD5E1"],
-      ["Text Dark", "bg-text-dark", "#38485D"],
+      ["Text Secondary", "bg-secondary", "#CBD5E1"],
+      ["Text Dark", "bg-dark", "#38485D"],
     ],
   },
 

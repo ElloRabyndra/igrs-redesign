@@ -18,12 +18,11 @@ export const getRatings = async () => {
       throw new Error("Failed to fetch ratings");
     }
 
+    const data = await response.json();
     console.log("Success to fetch ratings");
-    return await response.json();
+    return data;
   } catch (error) {
-    console.error(error);
     console.log("Using ratings mock data", ratings);
-
     return ratings;
   }
 };
@@ -36,15 +35,14 @@ export const getRatingDetail = async (id) => {
       throw new Error("Failed to fetch rating detail");
     }
 
+    const data = await response.json();
     console.log("Success to fetch rating detail");
-    return await response.json();
+    return data;
   } catch (error) {
-    console.error(error);
     console.log(
       "Using rating detail mock data",
       ratingDetail.find((item) => item.id === Number(id)),
     );
-
     return ratingDetail.find((item) => item.id === Number(id));
   }
 };
@@ -58,15 +56,14 @@ export const getContentClassifications = async () => {
       throw new Error("Failed to fetch content classifications");
     }
 
+    const data = await response.json();
     console.log("Success to fetch content classifications");
-    return await response.json();
+    return data;
   } catch (error) {
-    console.error(error);
     console.log(
       "Using content classifications mock data",
       contentClassifications,
     );
-
     return contentClassifications;
   }
 };
@@ -80,12 +77,11 @@ export const getGames = async () => {
       throw new Error("Failed to fetch games");
     }
 
+    const data = await response.json();
     console.log("Success to fetch games");
-    return await response.json();
+    return data;
   } catch (error) {
-    console.error(error);
     console.log("Using games mock data", games);
-
     return games;
   }
 };
@@ -98,15 +94,14 @@ export const getGameDetail = async (slug) => {
       throw new Error("Failed to fetch game detail");
     }
 
+    const data = await response.json();
     console.log("Success to fetch game detail");
-    return await response.json();
+    return data;
   } catch (error) {
-    console.error(error);
     console.log(
       "Using game detail mock data",
       gameDetail.find((item) => item.slug === slug),
     );
-
     return gameDetail.find((item) => item.slug === slug);
   }
 };
@@ -120,12 +115,11 @@ export const getBlogs = async () => {
       throw new Error("Failed to fetch blogs");
     }
 
+    const data = await response.json();
     console.log("Success to fetch blogs");
-    return await response.json();
+    return data;
   } catch (error) {
-    console.error(error);
     console.log("Using blogs mock data", blogs);
-
     return blogs;
   }
 };
