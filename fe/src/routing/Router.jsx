@@ -10,6 +10,10 @@ const Router = () => {
     <Routes>
       <Route index element={<Home />} />
       <Route path="/daftar-game" element={<Games />} />
+
+      {/* On Development Page */}
+      <Route path="/login" element={<OnDevelopment />} />
+      <Route path="/register" element={<OnDevelopment />} />
       <Route path="/informasi-rating" element={<OnDevelopment />} />
       <Route path="/konsultasi-adiksi" element={<OnDevelopment />} />
       <Route path="/color-palette" element={<ColorPalettePreview />} />
