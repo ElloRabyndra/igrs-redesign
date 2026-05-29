@@ -1,26 +1,89 @@
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 import logoFull from "../../assets/igrs-logo-full.png";
+import MobileMenu from "./MobileMenu";
 
-const Navbar = () => {
+const navLinks = [
+  { label: "Beranda", to: "/" },
+  { label: "Game", to: "/daftar-game" },
+  { label: "Informasi Rating", to: "/informasi-rating" },
+  { label: "Konsultasi Adiksi", to: "/konsultasi-adiksi" },
+];
+
+const Navbar = ({ variant = "default" }) => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
+
+  const isDefault = variant === "default";
+
+  const navTextColor =
+    mobileOpen || isDefault ? "text-white" : "text-primary-navy";
+  const navBg = mobileOpen ? "bg-primary-navy/40 backdrop-blur-md" : "";
+
   return (
-    <nav className="absolute top-0 w-full z-50 flex items-center justify-between px-6 py-8 md:px-12 xl:px-24 max-w-[1440px] left-1/2 -translate-x-1/2">
-      <Link to="/" className="shrink-0 z-50">
-        <img src={logoFull} alt="IGRS Logo" className="h-12 md:h-16 lg:h-20 object-contain" />
-      </Link>
-      
-      <div className="hidden lg:flex items-center gap-10 text-white font-medium z-50">
-        <Link to="/" className="text-primary-green font-bold">Beranda</Link>
-        <Link to="/tentang" className="hover:text-primary-green transition">Tentang</Link>
-        <Link to="/informasi-rating" className="hover:text-primary-green transition">Informasi Rating</Link>
-        <Link to="/konsultasi" className="hover:text-primary-green transition">Konsultasi Adiksi</Link>
+    <nav
+      className={`absolute top-0 w-full z-100 transition-colors duration-150 ${navBg} ${navTextColor}`}
+    >
+      <div className="flex items-center justify-between px-6 py-6 md:px-12 xl:px-24 max-w-[1440px] mx-auto">
+        <Link to="/" className="shrink-0">
+          <img
+            src={logoFull}
+            alt="IGRS Logo"
+            className="h-10 sm:h-12 md:h-14 object-contain"
+          />
+        </Link>
+
+        {/* Desktop nav links */}
+        <div className="hidden lg:flex items-center gap-10 font-bold text-[15px]">
+          {navLinks.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className={
+                location.pathname === link.to
+                  ? "text-primary-green font-bold"
+                  : "hover:text-primary-green transition"
+              }
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+
+        {/* Auth buttons + mobile toggle */}
+        <div className="flex items-center gap-4 sm:gap-6">
+          <Link
+            to="/login"
+            className={`hidden sm:inline font-bold text-sm transition ${navTextColor}`}
+          >
+            Masuk
+          </Link>
+          <Link
+            to="/register"
+            className="hidden sm:inline bg-primary-blue text-white px-6 py-2 rounded-full font-bold text-sm hover:bg-blue-mid transition shadow-md"
+          >
+            Daftar
+          </Link>
+
+          {/* Hamburger */}
+          <button
+            className={`lg:hidden transition-colors ${navTextColor}`}
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
-      <div className="flex items-center gap-6 z-50 text-sm sm:text-base">
-        <Link to="/login" className="text-white font-bold hover:text-gray-200">Masuk</Link>
-        <Link to="/register" className="bg-primary-blue text-white px-8 py-2.5 rounded-full font-bold hover:bg-blue-mid transition shadow-md">
-          Daftar
-        </Link>
-      </div>
+      {/* Mobile menu */}
+      <MobileMenu
+        navLinks={navLinks}
+        mobileOpen={mobileOpen}
+        setMobileOpen={setMobileOpen}
+        location={location}
+      />
     </nav>
   );
 };
