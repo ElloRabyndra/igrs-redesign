@@ -7,72 +7,72 @@
 
 @theme {
   /* Primary Colors */
-  --color-primary-navy: #1A365D;
-  --color-primary-blue: #01488B;
-  --color-primary-green: #00C950;
+  --color-primary-navy: #1a365d;
+  --color-primary-blue: #01488b;
+  --color-primary-green: #00c950;
 
   /* Accent / Teal */
-  --color-accent-teal: #38B2AC;
-  --color-accent-teal-dark: #2C7A7B;
+  --color-accent-teal: #38b2ac;
+  --color-accent-teal-dark: #2c7a7b;
 
   /* Additional Accents from Palette */
-  --color-accent-gold: #FDC700;
-  --color-accent-yellow: #FDD029;
-  --color-accent-orange: #FF6900;
-  --color-accent-orange-light: #FFB900;
+  --color-accent-gold: #fdc700;
+  --color-accent-yellow: #fdd029;
+  --color-accent-orange: #ff6900;
+  --color-accent-orange-light: #ffb900;
 
   /* Surface / Background */
-  --color-surface-white: #FFFFFF;
-  --color-surface-offwhite: #F8FAFC;
-  --color-surface-muted: #F2F4F6;
-  --color-surface-subtle: #F1F5F9;
+  --color-surface-white: #ffffff;
+  --color-surface-offwhite: #f8fafc;
+  --color-surface-muted: #f2f4f6;
+  --color-surface-subtle: #f1f5f9;
 
   /* Text */
-  --color-text-secondary: #CBD5E1;
-  --color-text-dark: #38485D;
+  --color-secondary: #cbd5e1;
+  --color-dark: #38485d;
 
   /* Border & Neutral */
-  --color-border-card: #E5E9EB;
-  --color-border-detail: #C4C6CF;
-  --color-neutral-gray: #D9D9D9;
-  --color-decorative-neutral: #B8B8B8;
-  --color-dot-inactive: #B7BFBE;
+  --color-border-card: #e5e9eb;
+  --color-border-detail: #c4c6cf;
+  --color-neutral-gray: #d9d9d9;
+  --color-decorative-neutral: #b8b8b8;
+  --color-dot-inactive: #b7bfbe;
 
   /* Carousel / Pagination */
-  --color-dot-active: #38B2AC;
+  --color-dot-active: #38b2ac;
 
   /* Content Classification - Safe (Teal) */
-  --color-classification-safe-border: #2C7A7B;
-  --color-classification-safe-icon-bg: #E6FFFA;
+  --color-classification-safe-border: #2c7a7b;
+  --color-classification-safe-icon-bg: #e6fffa;
 
   /* Content Classification - Danger (Red) */
-  --color-classification-danger-border: #BA1A1A;
-  --color-classification-danger-icon-bg: #FFDAD6;
+  --color-classification-danger-border: #ba1a1a;
+  --color-classification-danger-icon-bg: #ffdad6;
 
   /* Tints and Shades from Palette/Styles */
   /* Blues */
   --color-blue-darker: #015486;
-  --color-blue-dark: #234C87;
-  --color-blue-mid: #244D8A;
-  --color-blue-light: #0093CB;
-  --color-blue-pale: #91E0FF;
-  --color-blue-palest: #D5F3FF;
+  --color-blue-dark: #234c87;
+  --color-blue-mid: #244d8a;
+  --color-blue-light: #0093cb;
+  --color-blue-pale: #91e0ff;
+  --color-blue-palest: #d5f3ff;
 
   /* Greens */
-  --color-green-dark: #3C9646;
-  --color-green-light: #86D992;
-  --color-green-pale: #ADEDC7;
-  --color-green-palest: #DFFFE4;
+  --color-green-dark: #3c9646;
+  --color-green-light: #86d992;
+  --color-green-pale: #adedc7;
+  --color-green-palest: #dfffe4;
 
   /* Reds / Corals */
-  --color-red-dark: #A5120D;
-  --color-red-mid: #ED261C;
-  --color-coral-light: #FF8C86;
+  --color-red-dark: #a5120d;
+  --color-red-mid: #ed261c;
+  --color-coral-light: #ff8c86;
 
   /* Purples / Glassmorphism */
-  --color-purple: #4F39F6;
-  --color-purple-mid: #9810FA;
-  --color-magenta: #E60076;
+  --color-purple: #4f39f6;
+  --color-purple-mid: #9810fa;
+  --color-magenta: #e60076;
 }
 
 /* ============================================================
@@ -81,25 +81,34 @@
 
 :root {
   /* Heading gradient - digunakan pada teks heading seperti "Tentang Kami", "Kenali Kawasan Tak Aman" */
-  --gradient-heading: linear-gradient(90deg, #01488B 0%, #00C950 100%);
+  --gradient-heading: linear-gradient(90deg, #01488b 0%, #00c950 100%);
 
   /* Text gradient "Paling Banyak dicari" */
-  --gradient-heading-highlight: linear-gradient(90deg, #FFFFFF 34%, #FDC700 100%);
+  --gradient-heading-highlight: linear-gradient(
+    90deg,
+    #ffffff 34%,
+    #fdc700 100%
+  );
 
   /* Gradient accent from palette */
-  --gradient-accent: linear-gradient(90deg, #3EBDDC 0%, #00C950 100%);
+  --gradient-accent: linear-gradient(90deg, #3ebddc 0%, #00c950 100%);
 
   /* Wave shape / dark blue decorative */
-  --gradient-wave: linear-gradient(1deg, #1A365D 18%, #244D8A 100%);
+  --gradient-wave: linear-gradient(1deg, #1a365d 18%, #244d8a 100%);
 
   /* Glassmorphism background blur - section Blog/CTA */
-  --gradient-glass-bg: linear-gradient(90deg, #4F39F6 0%, #9810FA 50%, #E60076 100%);
+  --gradient-glass-bg: linear-gradient(
+    90deg,
+    #4f39f6 0%,
+    #9810fa 50%,
+    #e60076 100%
+  );
 
   /* Fade overlay - hero section bottom */
-  --gradient-fade: linear-gradient(0deg, #FFFFFF 28%, transparent 100%);
+  --gradient-fade: linear-gradient(0deg, #ffffff 28%, transparent 100%);
 
   /* Nav CTA button */
-  --gradient-nav-cta: linear-gradient(140deg, #42649C 0%, #1A365D 100%);
+  --gradient-nav-cta: linear-gradient(140deg, #42649c 0%, #1a365d 100%);
 
   /* Glassmorphism */
   --glass-surface: rgba(255, 255, 255, 0.8);
@@ -112,7 +121,9 @@
   --shadow-card-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
   --shadow-card-md: 0px 10px 63.9px 0px rgba(0, 0, 0, 0.12);
   --shadow-card-lg: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
-  --shadow-search: 0px 5.67px 8.5px -5.67px rgba(0, 0, 0, 0.1), 0px 14.17px 21.26px -4.25px rgba(0, 0, 0, 0.1);
+  --shadow-search:
+    0px 5.67px 8.5px -5.67px rgba(0, 0, 0, 0.1),
+    0px 14.17px 21.26px -4.25px rgba(0, 0, 0, 0.1);
 
   /* Review overlay */
   --overlay-review: rgba(0, 32, 69, 0.05);
@@ -148,4 +159,30 @@
   background-clip: text;
   padding-bottom: 0.2em;
   margin-bottom: -0.2em;
+}
+
+/* Style untuk game card di Swiper */
+
+.swiper-slide:not(.swiper-slide-active) .game-card {
+  padding: 0.75rem !important;
+
+  transform: scale(0.92) !important;
+
+  opacity: 0.75 !important;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+
+  z-index: 1 !important;
+}
+
+.swiper-slide-active .game-card {
+  padding: 1rem !important;
+
+  transform: scale(1.12) !important;
+
+  opacity: 1 !important;
+
+  box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.5) !important;
+
+  z-index: 20 !important;
 }
