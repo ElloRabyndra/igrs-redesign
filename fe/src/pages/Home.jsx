@@ -7,6 +7,7 @@ import ContentWarning from "../components/sections/ContentWarning";
 import BlogPengumuman from "../components/sections/BlogPengumuman";
 import GameRegister from "../components/sections/GameRegister";
 import Footer from "../components/layout/Footer";
+import PageSkeleton from "../components/ui/PageSkeleton";
 import {
   getRatings,
   getGames,
@@ -15,6 +16,7 @@ import {
 } from "../service/api";
 
 const Home = () => {
+  const [loading, setLoading] = useState(true);
   const [ratings, setRatings] = useState([]);
   const [games, setGames] = useState([]);
   const [classifications, setClassifications] = useState([]);
@@ -22,21 +24,30 @@ const Home = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const [ratingsData, gamesData, classData, blogsData] = await Promise.all([
-        getRatings(),
-        getGames(),
-        getContentClassifications(),
-        getBlogs(),
-      ]);
+      try {
+        const [ratingsData, gamesData, classData, blogsData] =
+          await Promise.all([
+            getRatings(),
+            getGames(),
+            getContentClassifications(),
+            getBlogs(),
+          ]);
 
-      setRatings(ratingsData);
-      setGames(gamesData);
-      setClassifications(classData);
-      setBlogs(blogsData);
+        setRatings(ratingsData);
+        setGames(gamesData);
+        setClassifications(classData);
+        setBlogs(blogsData);
+      } finally {
+        setLoading(false);
+      }
     };
 
     fetchData();
   }, []);
+
+  if (loading) {
+    return <PageSkeleton />;
+  }
 
   return (
     <main className="bg-surface-offwhite min-h-screen">
