@@ -11,6 +11,11 @@ export const getContentIcon = (iconName) => {
   return contentClassificationIcons[iconName] || null;
 };
 
+// Content Classification Type
+export const getContentType = (content_icon) => {
+  return content_icon.replace(/([A-Z])/g, " $1").trim();
+};
+
 // Rating Image
 export const getRatingImage = (ratingId, imageUrl) => {
   return imageUrl || ratingFallbackImages[ratingId];

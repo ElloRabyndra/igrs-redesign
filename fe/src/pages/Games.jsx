@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import GameList from "../components/sections/GameList";
-import PageSkeleton from "../components/ui/PageSkeleton";
+import GamesSkeleton from "../components/ui/GamesSkeleton";
 import { getGames } from "../service/api";
 
 const Games = () => {
@@ -22,7 +22,7 @@ const Games = () => {
   }, []);
 
   if (loading) {
-    return <PageSkeleton />;
+    return <GamesSkeleton />;
   }
 
   return (

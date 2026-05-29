@@ -98,11 +98,11 @@ export const getGameDetail = async (slug) => {
     console.log("Success to fetch game detail");
     return data;
   } catch (error) {
-    console.log(
-      "Using game detail mock data",
-      gameDetail.find((item) => item.slug === slug),
+    const mockData = gameDetail.find(
+      (item) => item.slug === slug || item.id === Number(slug),
     );
-    return gameDetail.find((item) => item.slug === slug);
+    console.log("Using game detail mock data", mockData);
+    return mockData;
   }
 };
 
