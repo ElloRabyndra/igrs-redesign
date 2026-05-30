@@ -1,12 +1,10 @@
-import { useRef } from "react";
+import { useState } from "react";
 import NavArrows from "./popularGame/NavArrows";
 import TopWave from "./popularGame/TopWave";
 import GameCarrousel from "./popularGame/GameCarrousel";
 
 const PopularGame = ({ games = [] }) => {
-  const prevRef = useRef(null);
-
-  const nextRef = useRef(null);
+  const [swiperInstance, setSwiperInstance] = useState(null);
 
   const featured = games.slice(5, 12);
 
@@ -29,11 +27,10 @@ const PopularGame = ({ games = [] }) => {
         {/* Carrousel Popular Game */}
         <GameCarrousel
           displayGames={displayGames}
-          prevRef={prevRef}
-          nextRef={nextRef}
+          setSwiperInstance={setSwiperInstance}
         />
         {/* Nav arrows */}
-        <NavArrows prevRef={prevRef} nextRef={nextRef} />
+        <NavArrows swiperInstance={swiperInstance} />
       </div>
     </section>
   );
