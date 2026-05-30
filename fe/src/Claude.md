@@ -1,4 +1,4 @@
-# AGENTS.md
+# CLAUDE.md
 
 ## Developer Profile
 
@@ -182,7 +182,7 @@ For a detailed explanation of each skill and when to activate them, see [`Guide.
 
 ## Project-Specific Context
 
-For project-specific information (tech stack decisions, feature scope, architecture details, conventions unique to the project), use/create a **`PROJECT_CONTEXT.md`** file in the project root.
+For project-specific information (tech stack decisions, feature scope, architecture details, conventions unique to the project), use/create a **`PROJECT_COTEXT.md`** file in the project root.
 
 This file is NOT part of the general agent setup. It should be created per project and contain information that prevents the need to re-explain project context in every prompt. Examples of what belongs there:
 

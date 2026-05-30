@@ -149,3 +149,13 @@ export const gameGalleryFallbackImages = {
     "https://i.ytimg.com/vi/nlgnJAe4mkI/maxresdefault.jpg",
   ],
 };
+
+// Filter by category options
+export const RATING_OPTIONS = [
+  { label: "Semua Kategori", value: "" },
+  { label: "Age Rating 3+", value: 1 },
+  { label: "Age Rating 7+", value: 2 },
+  { label: "Age Rating 13+", value: 3 },
+  { label: "Age Rating 15+", value: 4 },
+  { label: "Age Rating 18+", value: 5 },
+];
