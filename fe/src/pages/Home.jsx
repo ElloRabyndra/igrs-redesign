@@ -4,7 +4,7 @@ import Hero from "../components/sections/Hero";
 import About from "../components/sections/About";
 import PopularGame from "../components/sections/PopularGame";
 import ContentWarning from "../components/sections/ContentWarning";
-import BlogPengumuman from "../components/sections/BlogPengumuman";
+import Blog from "../components/sections/Blog";
 import GameRegister from "../components/sections/GameRegister";
 import Footer from "../components/layout/Footer";
 import HomeSkeleton from "../components/ui/HomeSkeleton";
@@ -56,7 +56,7 @@ const Home = () => {
       <About ratings={ratings} />
       <PopularGame games={games} />
       <ContentWarning classifications={classifications} />
-      <BlogPengumuman blogs={blogs} />
+      <Blog blogs={blogs} />
       <GameRegister />
       <Footer />
     </main>

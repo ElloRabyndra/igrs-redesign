@@ -2,7 +2,7 @@ import EllipseGradients from "./blog/EllipseGradients";
 import BlogHeader from "./blog/BlogHeader";
 import BlogCard from "./blog/BlogCard";
 
-const BlogPengumuman = ({ blogs = [] }) => {
+const Blog = ({ blogs = [] }) => {
   return (
     <section className="relative py-20 md:py-28 overflow-hidden bg-white">
       {/* Background Ellipse Gradients */}
@@ -22,4 +22,4 @@ const BlogPengumuman = ({ blogs = [] }) => {
   );
 };
 
-export default BlogPengumuman;
+export default Blog;
