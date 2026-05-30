@@ -10,9 +10,9 @@ import { getGameDetail } from "../service/api";
 import { getGameGallery } from "../utils/mockHelpers";
 
 const GameDetail = () => {
-  const { id } = useParams();
+  const { slug } = useParams();
   const navigate = useNavigate();
-  
+
   const [loading, setLoading] = useState(true);
   const [game, setGame] = useState(null);
 
@@ -20,8 +20,8 @@ const GameDetail = () => {
     const fetchDetail = async () => {
       try {
         setLoading(true);
-        const data = await getGameDetail(id);
-        
+        const data = await getGameDetail(slug);
+
         if (!data) {
           // If game not found, could navigate to 404 or show error
           navigate("/404", { replace: true });
@@ -34,11 +34,11 @@ const GameDetail = () => {
         setLoading(false);
       }
     };
-    
-    if (id) {
+
+    if (slug) {
       fetchDetail();
     }
-  }, [id, navigate]);
+  }, [slug, navigate]);
 
   if (loading) {
     return <GameDetailSkeleton />;
@@ -52,7 +52,10 @@ const GameDetail = () => {
       <main className="flex-1 mt-24 px-6 md:px-12 xl:px-24 max-w-[1440px] mx-auto w-full">
         <GameInfo game={game} />
         <ReviewSummary summary={game.review_summary} />
-        <GameGallery gallery={getGameGallery(game.id, game.game_gallery)} title={game.title} />
+        <GameGallery
+          gallery={getGameGallery(game.slug, game.game_gallery)}
+          title={game.title}
+        />
       </main>
       <Footer />
     </div>

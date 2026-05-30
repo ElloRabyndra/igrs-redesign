@@ -1,0 +1,2 @@
+getgamebyid ganti byslug
+

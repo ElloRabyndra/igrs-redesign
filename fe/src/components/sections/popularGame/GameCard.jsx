@@ -3,13 +3,13 @@ import { getGameImage, getRatingImage } from "../../../utils/mockHelpers";
 import { ChevronRight } from "lucide-react";
 
 const GameCard = ({ game }) => {
-  const gameImg = getGameImage(game.id, game.image_url);
+  const gameImg = getGameImage(game.slug, game.image_url);
 
   const ratingImg = getRatingImage(game.rating?.id, game.rating?.image_url);
 
   return (
     <Link
-      to={`/game/${game.id}`}
+      to={`/game/${game.slug}`}
       className="game-card rounded-[28px] bg-white transition-all duration-300 cursor-pointer relative block"
     >
       {/* Game cover */}
