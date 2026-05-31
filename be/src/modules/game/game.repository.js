@@ -1,4 +1,4 @@
-import prisma from '../../config/prisma.js';
+import prisma from "../../config/prisma.js";
 export class GameRepository {
   async findAll() {
     return prisma.game.findMany({
@@ -10,20 +10,21 @@ export class GameRepository {
         rating: {
           select: {
             id: true,
-            image_url: true
-          }
-        }
-      }
+            image_url: true,
+          },
+        },
+      },
     });
   }
   async findBySlug(slug) {
     return prisma.game.findUnique({
       where: {
-        slug
+        slug,
       },
       select: {
         id: true,
         title: true,
+        description: true,
         slug: true,
         image_url: true,
         publisher: true,
@@ -36,18 +37,18 @@ export class GameRepository {
               select: {
                 id: true,
                 content_icon: true,
-                title: true
-              }
-            }
-          }
+                title: true,
+              },
+            },
+          },
         },
         gallery: {
           select: {
             id: true,
-            image_url: true
-          }
-        }
-      }
+            image_url: true,
+          },
+        },
+      },
     });
   }
 }

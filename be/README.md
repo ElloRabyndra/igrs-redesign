@@ -12,7 +12,7 @@ Dokumentasi instalasi dan penggunaan API untuk proyek Game Redesign.
 1. Buka **XAMPP Control Panel**.
 2. Jalankan modul **Apache** dan **MySQL**.
 3. Buka browser dan pergi ke `http://localhost/phpmyadmin`.
-4. Buat database baru dengan nama `game_db`.
+4. Buat database baru dengan nama `igrs_db`.
 
 ### 2. Konfigurasi Proyek
 1. Buka folder `be` di terminal Anda.
