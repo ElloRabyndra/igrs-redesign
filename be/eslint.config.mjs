@@ -1,22 +1,17 @@
 import eslint from '@eslint/js';
-import tseslint from 'typescript-eslint';
 
-export default tseslint.config(
+export default [
   eslint.configs.recommended,
-  ...tseslint.configs.recommended,
   {
     languageOptions: {
-      parserOptions: {
-        project: './tsconfig.json',
-        tsconfigRootDir: import.meta.dirname,
-      },
+      ecmaVersion: 'latest',
+      sourceType: 'module',
     },
     rules: {
-      '@typescript-eslint/no-explicit-any': 'off',
-      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+      'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
     },
   },
   {
-    ignores: ['dist/', 'node_modules/', 'prisma/', 'eslint.config.mjs', 'prisma.config.ts'],
+    ignores: ['dist/', 'node_modules/', 'prisma/', 'eslint.config.mjs'],
   }
-);
+];

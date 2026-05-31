@@ -11,7 +11,7 @@ const Router = () => {
     <Routes>
       <Route index element={<Home />} />
       <Route path="/daftar-game" element={<Games />} />
-      <Route path="/game/:id" element={<GameDetail />} />
+      <Route path="/game/:slug" element={<GameDetail />} />
 
       {/* On Development Page */}
       <Route path="/login" element={<OnDevelopment />} />

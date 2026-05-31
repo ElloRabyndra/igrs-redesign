@@ -49,7 +49,7 @@ model ContentClassification {
   id          Int    @id @default(autoincrement())
   title       String
   description String @db.Text
-  image_url   String
+  content_icon   String
   rating_id   Int
   rating      Rating @relation(fields: [rating_id], references: [id])
 
@@ -62,18 +62,9 @@ model Blog {
   slug        String       @unique
   description String       @db.Text
   image_url   String
-  category_id Int
-  category    CategoryBlog @relation(fields: [category_id], references: [id])
+
   updated_at  DateTime     @updatedAt
 
   @@map("blogs")
 }
 
-model CategoryBlog {
-  id    Int    @id @default(autoincrement())
-  title String
-  slug  String @unique
-  blogs Blog[]
-
-  @@map("category_blogs")
-}
