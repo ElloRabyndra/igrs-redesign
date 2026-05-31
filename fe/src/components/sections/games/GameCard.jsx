@@ -7,7 +7,7 @@ const GameCard = ({ game }) => {
   const ratingImg = getRatingImage(game.rating?.id, game.rating?.image_url);
 
   return (
-    <Link to={`/game/${game.id}`} className="group block h-full">
+    <Link to={`/game/${game.slug}`} className="group block h-full">
       <div className="rounded-[32px] bg-white p-4 md:p-5 shadow-sm border border-border-card/50 hover:shadow-xl transition-all duration-300 relative h-full flex flex-col">
         {/* Game cover */}
         <div className="relative overflow-hidden rounded-[20px] mb-4 aspect-square bg-surface-muted shrink-0">

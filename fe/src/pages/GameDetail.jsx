@@ -53,7 +53,7 @@ const GameDetail = () => {
         <GameInfo game={game} />
         <ReviewSummary summary={game.review_summary} />
         <GameGallery
-          gallery={getGameGallery(game.slug, game.game_gallery)}
+          gallery={getGameGallery(game.id, game.game_gallery)}
           title={game.title}
         />
       </main>
