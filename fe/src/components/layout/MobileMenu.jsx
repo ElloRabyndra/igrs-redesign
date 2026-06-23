@@ -11,7 +11,7 @@ const MobileMenu = ({ navLinks, mobileOpen, setMobileOpen, location }) => {
           to={link.to}
           onClick={() => setMobileOpen(false)}
           className={`block py-2 text-white font-medium ${
-            location.pathname === link.to
+            (link.to === "/" ? location.pathname === "/" : location.pathname.startsWith(link.to))
               ? "text-primary-green font-bold"
               : "hover:text-primary-green transition-colors"
           }`}

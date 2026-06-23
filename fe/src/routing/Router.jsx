@@ -5,6 +5,7 @@ import GameDetail from "../pages/GameDetail";
 import ColorPalettePreview from "../components/dev/ColorPalettePreview";
 import NotFound from "../pages/NotFound";
 import OnDevelopment from "../pages/OnDevelopment";
+import RatingInfo from "../pages/RatingInfo";
 
 const Router = () => {
   return (
@@ -16,7 +17,8 @@ const Router = () => {
       {/* On Development Page */}
       <Route path="/login" element={<OnDevelopment />} />
       <Route path="/register" element={<OnDevelopment />} />
-      <Route path="/informasi-rating" element={<OnDevelopment />} />
+      <Route path="/informasi-rating" element={<RatingInfo />} />
+      <Route path="/informasi-rating/:id" element={<RatingInfo />} />
       <Route path="/konsultasi-adiksi" element={<OnDevelopment />} />
       <Route path="/color-palette" element={<ColorPalettePreview />} />
       <Route path="*" element={<NotFound />} />

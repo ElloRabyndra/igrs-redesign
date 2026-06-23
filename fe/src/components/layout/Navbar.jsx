@@ -41,7 +41,7 @@ const Navbar = ({ variant = "default" }) => {
               key={link.to}
               to={link.to}
               className={
-                location.pathname === link.to
+                (link.to === "/" ? location.pathname === "/" : location.pathname.startsWith(link.to))
                   ? "text-primary-green font-bold"
                   : "hover:text-primary-green transition"
               }
