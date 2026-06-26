@@ -16,7 +16,8 @@ const NotFound = () => {
               Halaman Tidak Ditemukan
             </h2>
             <p className="text-slate-300 max-w-[500px] mx-auto text-sm md:text-base mb-4">
-              Maaf, halaman yang Anda cari tidak ada, telah dipindahkan, atau Anda salah memasukkan URL.
+              Maaf, halaman yang Anda cari tidak ada, telah dipindahkan, atau
+              Anda salah memasukkan URL.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
               <Link

@@ -1,21 +1,6 @@
 import { Link } from "react-router";
 import { Share2, Mail } from "lucide-react";
 
-const footerLinks = {
-  tautanCepat: [
-    { label: "Beranda", to: "/" },
-    { label: "Tentang", to: "/tentang" },
-    { label: "Informasi Rating", to: "/informasi-rating" },
-    { label: "Game", to: "/daftar-game" },
-  ],
-  dukungan: [
-    { label: "Kebijakan Privasi", to: "#" },
-    { label: "Syarat & Ketentuan", to: "#" },
-    { label: "Kontak Kami", to: "#" },
-    { label: "FAQ", to: "#" },
-  ],
-};
-
 const Footer = () => {
   return (
     <footer className="bg-primary-navy text-white">
@@ -51,16 +36,26 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-bold">Tautan Cepat</h3>
             <ul className="space-y-2.5">
-              {footerLinks.tautanCepat.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    to={link.to}
-                    className="text-sm text-white/70 hover:text-white transition"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link to="/" className="text-sm text-white/70 hover:text-white transition">
+                  Beranda
+                </Link>
+              </li>
+              <li>
+                <Link to="/tentang" className="text-sm text-white/70 hover:text-white transition">
+                  Tentang
+                </Link>
+              </li>
+              <li>
+                <Link to="/informasi-rating" className="text-sm text-white/70 hover:text-white transition">
+                  Informasi Rating
+                </Link>
+              </li>
+              <li>
+                <Link to="/daftar-game" className="text-sm text-white/70 hover:text-white transition">
+                  Game
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -68,16 +63,26 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-bold">Dukungan</h3>
             <ul className="space-y-2.5">
-              {footerLinks.dukungan.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    to={link.to}
-                    className="text-sm text-white/70 hover:text-white transition"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link to="#" className="text-sm text-white/70 hover:text-white transition">
+                  Kebijakan Privasi
+                </Link>
+              </li>
+              <li>
+                <Link to="#" className="text-sm text-white/70 hover:text-white transition">
+                  Syarat & Ketentuan
+                </Link>
+              </li>
+              <li>
+                <Link to="#" className="text-sm text-white/70 hover:text-white transition">
+                  Kontak Kami
+                </Link>
+              </li>
+              <li>
+                <Link to="#" className="text-sm text-white/70 hover:text-white transition">
+                  FAQ
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

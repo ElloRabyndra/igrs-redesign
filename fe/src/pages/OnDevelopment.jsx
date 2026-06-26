@@ -17,7 +17,9 @@ const OnDevelopment = () => {
               Halaman Sedang Dalam Pengembangan
             </h2>
             <p className="text-slate-300 max-w-[600px] mx-auto text-sm md:text-base mb-4 leading-relaxed">
-              Fitur ini masih dalam tahap pengerjaan. Kami sedang berusaha sebaik mungkin untuk segera menghadirkan halaman ini. Harap maklum ya!
+              Fitur ini masih dalam tahap pengerjaan. Kami sedang berusaha
+              sebaik mungkin untuk segera menghadirkan halaman ini. Harap maklum
+              ya!
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
               <Link

@@ -13,12 +13,12 @@ const Router = () => {
       <Route index element={<Home />} />
       <Route path="/daftar-game" element={<Games />} />
       <Route path="/game/:slug" element={<GameDetail />} />
+      <Route path="/informasi-rating" element={<RatingInfo />} />
+      <Route path="/informasi-rating/:id" element={<RatingInfo />} />
 
       {/* On Development Page */}
       <Route path="/login" element={<OnDevelopment />} />
       <Route path="/register" element={<OnDevelopment />} />
-      <Route path="/informasi-rating" element={<RatingInfo />} />
-      <Route path="/informasi-rating/:id" element={<RatingInfo />} />
       <Route path="/konsultasi-adiksi" element={<OnDevelopment />} />
       <Route path="/color-palette" element={<ColorPalettePreview />} />
       <Route path="*" element={<NotFound />} />
