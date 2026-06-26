@@ -8,6 +8,7 @@ import Blog from "../components/sections/Blog";
 import GameRegister from "../components/sections/GameRegister";
 import Footer from "../components/layout/Footer";
 import HomeSkeleton from "../components/ui/HomeSkeleton";
+import ErrorState from "../components/ui/ErrorState";
 import {
   getRatings,
   getGames,
@@ -17,36 +18,44 @@ import {
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   const [ratings, setRatings] = useState([]);
   const [games, setGames] = useState([]);
   const [classifications, setClassifications] = useState([]);
   const [blogs, setBlogs] = useState([]);
 
+  const fetchData = async () => {
+    try {
+      setLoading(true);
+      setError(false);
+      const [ratingsData, gamesData, classData, blogsData] = await Promise.all([
+        getRatings(),
+        getGames(),
+        getContentClassifications(),
+        getBlogs(),
+      ]);
+
+      setRatings(ratingsData);
+      setGames(gamesData);
+      setClassifications(classData);
+      setBlogs(blogsData);
+    } catch (err) {
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const [ratingsData, gamesData, classData, blogsData] =
-          await Promise.all([
-            getRatings(),
-            getGames(),
-            getContentClassifications(),
-            getBlogs(),
-          ]);
-
-        setRatings(ratingsData);
-        setGames(gamesData);
-        setClassifications(classData);
-        setBlogs(blogsData);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     fetchData();
   }, []);
 
   if (loading) {
     return <HomeSkeleton />;
+  }
+
+  if (error) {
+    return <ErrorState onRetry={fetchData} />;
   }
 
   return (

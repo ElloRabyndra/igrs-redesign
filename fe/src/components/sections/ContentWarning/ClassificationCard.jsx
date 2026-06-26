@@ -1,4 +1,4 @@
-import { getContentIcon } from "../../../utils/mockHelpers";
+import { getContentIcon } from "../../../utils/helpers";
 
 const ClassificationCard = ({ item }) => {
   const IconComponent = getContentIcon(item.content_icon);

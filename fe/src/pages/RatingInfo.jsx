@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import RatingInfoSkeleton from "../components/ui/RatingInfoSkeleton";
+import ErrorState from "../components/ui/ErrorState";
 import { getRatings, getRatingDetail } from "../service/api";
 import Rating from "../components/sections/Rating";
 
@@ -11,6 +12,7 @@ const RatingInfo = () => {
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   const [ratings, setRatings] = useState([]);
   const [activeRatingDetail, setActiveRatingDetail] = useState(null);
 
@@ -22,27 +24,33 @@ const RatingInfo = () => {
     }
   }, [id, navigate]);
 
+  const fetchData = async () => {
+    try {
+      setLoading(true);
+      setError(false);
+      const ratingsData = await getRatings();
+      setRatings(ratingsData);
+
+      const detailData = await getRatingDetail(activeId);
+      setActiveRatingDetail(detailData);
+    } catch (err) {
+      console.error("Failed to fetch rating info:", err);
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        const ratingsData = await getRatings();
-        setRatings(ratingsData);
-
-        const detailData = await getRatingDetail(activeId);
-        setActiveRatingDetail(detailData);
-      } catch (error) {
-        console.error("Failed to fetch rating info:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     fetchData();
   }, [activeId]);
 
   if (loading) {
     return <RatingInfoSkeleton />;
+  }
+
+  if (error) {
+    return <ErrorState onRetry={fetchData} />;
   }
 
   if (!activeRatingDetail) return null;

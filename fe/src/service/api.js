@@ -1,12 +1,3 @@
-import {
-  ratings,
-  ratingDetail,
-  contentClassifications,
-  games,
-  gameDetail,
-  blogs,
-} from "../mock/data.js";
-
 const API_URL = import.meta.env.VITE_API_URL;
 
 // Rating
@@ -22,8 +13,8 @@ export const getRatings = async () => {
     console.log("Success to fetch ratings");
     return data;
   } catch (error) {
-    console.log("Using ratings mock data", ratings);
-    return ratings;
+    console.error("Error fetching ratings:", error);
+    throw error;
   }
 };
 
@@ -39,11 +30,8 @@ export const getRatingDetail = async (id) => {
     console.log("Success to fetch rating detail");
     return data;
   } catch (error) {
-    console.log(
-      "Using rating detail mock data",
-      ratingDetail.find((item) => item.id === Number(id)),
-    );
-    return ratingDetail.find((item) => item.id === Number(id));
+    console.error(`Error fetching rating detail for id ${id}:`, error);
+    throw error;
   }
 };
 
@@ -60,11 +48,8 @@ export const getContentClassifications = async () => {
     console.log("Success to fetch content classifications");
     return data;
   } catch (error) {
-    console.log(
-      "Using content classifications mock data",
-      contentClassifications,
-    );
-    return contentClassifications;
+    console.error("Error fetching content classifications:", error);
+    throw error;
   }
 };
 
@@ -81,8 +66,8 @@ export const getGames = async () => {
     console.log("Success to fetch games");
     return data;
   } catch (error) {
-    console.log("Using games mock data", games);
-    return games;
+    console.error("Error fetching games:", error);
+    throw error;
   }
 };
 
@@ -98,11 +83,8 @@ export const getGameDetail = async (slug) => {
     console.log("Success to fetch game detail");
     return data;
   } catch (error) {
-    const mockData = gameDetail.find(
-      (item) => item.slug === slug || item.id === Number(slug),
-    );
-    console.log("Using game detail mock data", mockData);
-    return mockData;
+    console.error(`Error fetching game detail for slug ${slug}:`, error);
+    throw error;
   }
 };
 
@@ -119,7 +101,7 @@ export const getBlogs = async () => {
     console.log("Success to fetch blogs");
     return data;
   } catch (error) {
-    console.log("Using blogs mock data", blogs);
-    return blogs;
+    console.error("Error fetching blogs:", error);
+    throw error;
   }
 };

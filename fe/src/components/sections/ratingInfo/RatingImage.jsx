@@ -1,14 +1,10 @@
-import { getRatingImage } from "../../../utils/mockHelpers";
-
-const RatingImage = ({ ratingId, ratingTitle }) => {
-  const imgSrc = getRatingImage(ratingId, null);
-
+const RatingImage = ({ ratingTitle, ratingImageUrl }) => {
   return (
     <div className="w-[120px] sm:w-[150px] lg:w-[180px] shrink-0 mx-auto lg:mx-0">
       <div className="w-full aspect-square flex items-center justify-center overflow-hidden">
-        {imgSrc ? (
+        {ratingImageUrl ? (
           <img
-            src={imgSrc}
+            src={ratingImageUrl}
             alt={`Rating ${ratingTitle}`}
             className="w-full h-full object-contain"
           />

@@ -10,7 +10,7 @@ const Rating = ({ ratings, activeId, activeRatingDetail }) => {
 
         <div className="flex-1 w-full bg-white rounded-[20px] shadow-sm p-5 md:p-8 flex flex-col md:flex-row gap-5 md:gap-8 items-start">
           <RatingImage
-            ratingId={activeRatingDetail.id}
+            ratingImageUrl={activeRatingDetail.image_url}
             ratingTitle={activeRatingDetail.title}
           />
 

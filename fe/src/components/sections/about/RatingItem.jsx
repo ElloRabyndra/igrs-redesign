@@ -1,13 +1,9 @@
-import { getRatingImage } from "../../../utils/mockHelpers";
-
 const RatingItem = ({ rating }) => {
-  const image = getRatingImage(rating.id, rating.image_url);
-
   return (
     <div className="flex items-center gap-6 sm:gap-3">
-      {image && (
+      {rating.image_url && (
         <img
-          src={image}
+          src={rating.image_url}
           alt={`Rating ${rating.title}`}
           className="w-15 sm:w-14 object-cover "
         />

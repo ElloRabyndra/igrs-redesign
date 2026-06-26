@@ -1,4 +1,4 @@
-import { getContentIcon, getContentType } from "../../../utils/mockHelpers";
+import { getContentIcon, getContentType } from "../../../utils/helpers";
 
 const GameCategories = ({ gameContentClassification }) => {
   return (

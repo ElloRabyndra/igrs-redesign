@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import GamesGrid from "./games/GamesGrid";
 import SearchFilter from "./games/SearchFilter";
-import { RATING_OPTIONS } from "../../mock/constants";
+import { RATING_OPTIONS } from "../../utils/constants";
 
 const GameList = ({ games }) => {
   const [search, setSearch] = useState("");

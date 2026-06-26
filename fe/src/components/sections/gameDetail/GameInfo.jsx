@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router";
 import { ChevronLeft } from "lucide-react";
-import { getGameImage, getRatingImage } from "../../../utils/mockHelpers";
 import GameHeader from "./GameHeader";
 import GameCover from "./GameCover";
 import GameDescription from "./GameDescription";
@@ -8,9 +7,6 @@ import GameCategories from "./GameCategories";
 
 const GameInfo = ({ game }) => {
   const navigate = useNavigate();
-
-  const gameImg = getGameImage(game.id, game.image_url);
-  const ratingImg = getRatingImage(game.rating?.id, game.rating?.image_url);
 
   return (
     <div className="flex flex-col gap-6">
@@ -26,7 +22,7 @@ const GameInfo = ({ game }) => {
 
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
         {/* Left: Game Cover */}
-        <GameCover gameImg={gameImg} gameTitle={game.title} />
+        <GameCover gameImg={game.image_url} gameTitle={game.title} />
 
         {/* Right: Info */}
         <div className="flex-1 flex flex-col pt-2 lg:pt-4">
@@ -34,7 +30,7 @@ const GameInfo = ({ game }) => {
           <GameHeader
             gameTitle={game.title}
             gamePublisher={game.publisher}
-            ratingImg={ratingImg}
+            ratingImg={game.rating?.image_url}
           />
 
           {/* Description Card */}

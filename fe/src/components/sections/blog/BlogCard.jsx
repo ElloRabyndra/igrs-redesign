@@ -1,9 +1,6 @@
 import { ArrowRight, Calendar } from "lucide-react";
-import { getBlogImage } from "../../../utils/mockHelpers";
 
 const BlogCard = ({ blog }) => {
-  const image = getBlogImage(blog.id, blog.image_url);
-
   const formattedDate = new Date(blog.date).toLocaleDateString("id-ID", {
     day: "numeric",
     month: "long",
@@ -13,12 +10,14 @@ const BlogCard = ({ blog }) => {
   return (
     <div className="rounded-2xl border border-border-card bg-white/80 backdrop-blur-md overflow-hidden hover:shadow-lg transition group border-b-[6px] border-b-purple">
       {/* Image */}
-      <div className="aspect-16/10 overflow-hidden">
-        <img
-          src={image}
-          alt={blog.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-        />
+      <div className="aspect-16/10 overflow-hidden bg-slate-100">
+        {blog.image_url && (
+          <img
+            src={blog.image_url}
+            alt={blog.title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        )}
       </div>
 
       {/* Content */}
