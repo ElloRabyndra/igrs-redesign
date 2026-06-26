@@ -16,7 +16,7 @@ const ReviewSummary = ({ summary }) => {
         </h2>
       </div>
 
-      <div className="bg-surface-offwhite sm:bg-slate-100/70 rounded-[24px] md:rounded-[32px] p-8 md:p-12 border border-slate-200/50">
+      <div className="bg-surface-offwhite sm:bg-slate-100/70 rounded-3xl md:rounded-4xl p-8 md:p-12 border border-slate-200/50">
         <p className="text-primary-navy/80 italic font-medium sm:text-lg leading-relaxed">
           {summary}
         </p>

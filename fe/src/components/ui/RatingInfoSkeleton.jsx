@@ -36,7 +36,7 @@ const RatingInfoSkeleton = () => {
               <div className="w-40 h-8 bg-slate-200/60 rounded-full mb-6"></div>
               
               {/* Description Box */}
-              <div className="bg-slate-50 rounded-[16px] p-5 md:p-6 border border-slate-100">
+              <div className="bg-slate-50 rounded-2xl p-5 md:p-6 border border-slate-100">
                 <div className="space-y-3">
                   <div className="h-3 w-full bg-slate-200/60 rounded-full"></div>
                   <div className="h-3 w-full bg-slate-200/60 rounded-full"></div>

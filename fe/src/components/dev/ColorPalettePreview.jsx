@@ -261,7 +261,7 @@ export default function ColorPalettePreview() {
           </div>
 
           <div
-            className="rounded-[32px] border border-border-card bg-white p-10 space-y-8"
+            className="rounded-4xl border border-border-card bg-white p-10 space-y-8"
             style={{
               boxShadow: "var(--shadow-card-md)",
             }}
@@ -354,7 +354,7 @@ export default function ColorPalettePreview() {
             <div className="absolute inset-0 opacity-20 bg-white blur-3xl" />
 
             <div
-              className="relative max-w-lg rounded-[32px] border p-10 backdrop-blur-xl"
+              className="relative max-w-lg rounded-4xl border p-10 backdrop-blur-xl"
               style={{
                 background: "var(--glass-surface)",
                 borderColor: "var(--glass-card-border)",

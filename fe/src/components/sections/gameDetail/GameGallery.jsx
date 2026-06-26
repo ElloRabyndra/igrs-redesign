@@ -16,7 +16,7 @@ const GameGallery = ({ gallery, title }) => {
         {gallery.slice(0, 3).map((item, idx) => (
           <div
             key={idx}
-            className="rounded-[24px] overflow-hidden aspect-16/10 bg-slate-200/50 shadow-sm border border-slate-200"
+            className="rounded-3xl overflow-hidden aspect-16/10 bg-slate-200/50 shadow-sm border border-slate-200"
           >
             {item.image_url ? (
               <img

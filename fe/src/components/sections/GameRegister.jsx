@@ -2,7 +2,7 @@ const GameRegister = () => {
   return (
     <section className="py-16 md:py-24 bg-surface-offwhite">
       <div className="mx-auto max-w-[1280px] px-6 md:px-12 xl:px-16">
-        <div className="relative rounded-[32px] md:rounded-[40px] bg-primary-navy overflow-hidden px-8 py-14 md:px-16 md:py-20 text-center">
+        <div className="relative rounded-4xl bg-primary-navy overflow-hidden px-8 py-14 md:px-16 md:py-20 text-center">
           <div className="relative z-10 space-y-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-snug">
               Gim anda belum terdaftar?

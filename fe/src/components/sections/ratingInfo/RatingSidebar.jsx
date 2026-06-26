@@ -5,7 +5,7 @@ const RatingSidebar = ({ ratings, activeId }) => {
     <div className="w-full lg:w-[240px] xl:w-[280px] shrink-0 bg-white rounded-[20px] p-4 lg:p-5 shadow-sm">
       {/* Header */}
       <div className="bg-surface-subtle rounded-full py-2 px-4 mb-4 flex justify-center items-center h-[50px]">
-        <h3 className="font-bold text-[16px] leading-[24px] bg-clip-text text-transparent bg-linear-to-r from-[#1A365D] to-primary-green text-center">
+        <h3 className="font-bold leading-[24px] bg-clip-text text-transparent bg-linear-to-r from-[#1A365D] to-primary-green text-center">
           Daftar Rating
         </h3>
       </div>

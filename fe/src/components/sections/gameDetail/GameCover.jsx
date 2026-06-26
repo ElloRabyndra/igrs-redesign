@@ -4,7 +4,7 @@ const GameCover = ({ gameImg, gameTitle }) => {
       <img
         src={gameImg}
         alt={gameTitle}
-        className=" w-full object-cover rounded-[32px] md:rounded-[40px] shadow-lg aspect-video lg:aspect-4/5"
+        className=" w-full object-cover rounded-4xl shadow-lg aspect-video lg:aspect-4/5"
       />
     </div>
   );

@@ -5,7 +5,7 @@ const GameDetailSkeleton = () => {
   return (
     <div className="min-h-screen bg-white flex flex-col">
       <Navbar variant="white" />
-      
+
       <main className="flex-1 mt-24 px-6 md:px-12 xl:px-24 max-w-[1440px] mx-auto w-full animate-pulse">
         {/* Game Info Section Skeleton */}
         <div className="flex flex-col gap-6">
@@ -15,7 +15,7 @@ const GameDetailSkeleton = () => {
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
             {/* Left: Game Cover */}
             <div className="shrink-0 w-full max-w-[720px] mx-auto lg:max-w-none lg:w-[350px] xl:w-[400px]">
-              <div className="w-full bg-slate-200/60 rounded-[32px] md:rounded-[40px] shadow-sm aspect-video lg:aspect-4/5"></div>
+              <div className="w-full bg-slate-200/60 rounded-4xl md:rounded-[40px] shadow-sm aspect-video lg:aspect-4/5"></div>
             </div>
 
             {/* Right: Info */}
@@ -31,7 +31,7 @@ const GameDetailSkeleton = () => {
               </div>
 
               {/* Description Card */}
-              <div className="bg-white rounded-[24px] p-6 sm:p-8 shadow-md border border-slate-100 mb-10">
+              <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-md border border-slate-100 mb-10">
                 <div className="h-6 w-40 bg-slate-200/60 rounded-full mb-6"></div>
                 <div className="space-y-3">
                   <div className="h-4 w-full bg-slate-200/60 rounded-full"></div>
@@ -59,7 +59,7 @@ const GameDetailSkeleton = () => {
             <div className="w-8 h-8 bg-slate-200/60 rounded-lg"></div>
             <div className="h-8 w-48 bg-slate-200/60 rounded-full"></div>
           </div>
-          <div className="bg-surface-offwhite sm:bg-slate-100/70 rounded-[24px] md:rounded-[32px] p-8 md:p-12 border border-slate-200/50">
+          <div className="bg-surface-offwhite sm:bg-slate-100/70 rounded-3xl md:rounded-4xl p-8 md:p-12 border border-slate-200/50">
             <div className="space-y-4">
               <div className="h-5 w-full bg-slate-200/60 rounded-full"></div>
               <div className="h-5 w-full bg-slate-200/60 rounded-full"></div>
@@ -78,7 +78,7 @@ const GameDetailSkeleton = () => {
             {[...Array(3)].map((_, i) => (
               <div
                 key={i}
-                className="rounded-[24px] aspect-16/10 bg-slate-200/60 shadow-sm"
+                className="rounded-3xl aspect-16/10 bg-slate-200/60 shadow-sm"
               ></div>
             ))}
           </div>

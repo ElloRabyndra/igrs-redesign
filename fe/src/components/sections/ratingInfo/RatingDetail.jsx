@@ -13,12 +13,12 @@ const RatingDetail = ({ ratingTitle, ratingDescription }) => {
       </div>
 
       {/* Title */}
-      <h1 className="text-[20px] md:text-[24px] leading-[30px] font-bold text-primary-navy mb-4">
+      <h1 className="text-[20px] md:text-2xl leading-[30px] font-bold text-primary-navy mb-4">
         Rating Game {ratingTitle}+
       </h1>
 
       {/* Description Box */}
-      <div className="bg-surface-subtle rounded-[16px] p-5 md:p-6">
+      <div className="bg-surface-subtle rounded-2xl p-5 md:p-6">
         <p className="text-[13px] md:text-[14px] leading-[22px] text-dark font-normal">
           {ratingDescription}
         </p>
