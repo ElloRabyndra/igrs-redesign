@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
 import Navbar from "../components/layout/Navbar";
-import Footer from "../components/layout/Footer";
+// import Footer from "../components/layout/Footer";
 import GameDetailSkeleton from "../components/ui/GameDetailSkeleton";
 import ErrorState from "../components/ui/ErrorState";
 import GameInfo from "../components/sections/gameDetail/GameInfo";
@@ -60,7 +60,7 @@ const GameDetail = () => {
         <ReviewSummary summary={game.review_summary} />
         <GameGallery gallery={game.game_gallery || []} title={game.title} />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

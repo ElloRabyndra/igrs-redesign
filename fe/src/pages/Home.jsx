@@ -6,7 +6,6 @@ import PopularGame from "../components/sections/PopularGame";
 import ContentWarning from "../components/sections/ContentWarning";
 import Blog from "../components/sections/Blog";
 import GameRegister from "../components/sections/GameRegister";
-import Footer from "../components/layout/Footer";
 import HomeSkeleton from "../components/ui/HomeSkeleton";
 import ErrorState from "../components/ui/ErrorState";
 import {
@@ -67,7 +66,6 @@ const Home = () => {
       <ContentWarning classifications={classifications} />
       <Blog blogs={blogs} />
       <GameRegister />
-      <Footer />
     </main>
   );
 };

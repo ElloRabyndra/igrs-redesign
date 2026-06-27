@@ -1,5 +1,4 @@
 import Navbar from "../layout/Navbar";
-import Footer from "../layout/Footer";
 
 const GameDetailSkeleton = () => {
   return (
@@ -84,8 +83,6 @@ const GameDetailSkeleton = () => {
           </div>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 };

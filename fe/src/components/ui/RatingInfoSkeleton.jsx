@@ -1,5 +1,4 @@
 import Navbar from "../layout/Navbar";
-import Footer from "../layout/Footer";
 
 const RatingInfoSkeleton = () => {
   return (
@@ -47,13 +46,9 @@ const RatingInfoSkeleton = () => {
                 </div>
               </div>
             </div>
-            
           </div>
-
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 };

@@ -1,5 +1,4 @@
 import Navbar from "../layout/Navbar";
-import Footer from "../layout/Footer";
 
 const HomeSkeleton = () => {
   return (
@@ -38,7 +37,6 @@ const HomeSkeleton = () => {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 };

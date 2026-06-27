@@ -1,5 +1,4 @@
 import Navbar from "../layout/Navbar";
-import Footer from "../layout/Footer";
 
 const GamesSkeleton = () => {
   return (
@@ -36,8 +35,6 @@ const GamesSkeleton = () => {
           ))}
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 };

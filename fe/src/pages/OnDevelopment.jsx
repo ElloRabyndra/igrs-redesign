@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { Wrench } from "lucide-react";
 import Navbar from "../components/layout/Navbar";
-import Footer from "../components/layout/Footer";
+// import Footer from "../components/layout/Footer";
 
 const OnDevelopment = () => {
   return (
@@ -32,7 +32,7 @@ const OnDevelopment = () => {
           </div>
         </div>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

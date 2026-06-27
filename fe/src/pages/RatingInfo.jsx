@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
 import Navbar from "../components/layout/Navbar";
-import Footer from "../components/layout/Footer";
+// import Footer from "../components/layout/Footer";
 import RatingInfoSkeleton from "../components/ui/RatingInfoSkeleton";
 import ErrorState from "../components/ui/ErrorState";
 import { getRatings, getRatingDetail } from "../service/api";
@@ -63,7 +63,7 @@ const RatingInfo = () => {
         activeId={activeId}
         activeRatingDetail={activeRatingDetail}
       />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
