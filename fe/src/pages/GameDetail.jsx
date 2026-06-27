@@ -55,7 +55,7 @@ const GameDetail = () => {
   return (
     <div className="min-h-screen bg-white flex flex-col">
       <Navbar variant="white" />
-      <main className="flex-1 mt-24 px-6 md:px-12 xl:px-24 max-w-[1440px] mx-auto w-full">
+      <main className="mt-24 px-6 md:px-12 xl:px-24 max-w-[1440px] mx-auto w-full">
         <GameInfo game={game} />
         <ReviewSummary summary={game.review_summary} />
         <GameGallery gallery={game.game_gallery || []} title={game.title} />
