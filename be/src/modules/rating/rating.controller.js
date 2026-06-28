@@ -23,6 +23,13 @@ export class RatingController {
         throw error;
       }
       const rating = await this.ratingService.getRatingById(parseInt(id));
+
+      if (!rating) {
+        const error = new Error('Rating not found');
+        error.statusCode = 404;
+        throw error;
+      }
+
       return successResponse(res, rating, 'Rating retrieved successfully');
     } catch (error) {
       next(error);

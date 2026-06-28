@@ -16,9 +16,7 @@ export class BlogService {
   async getBlogBySlug(slug) {
     const blog = await this.blogRepository.findBySlug(slug);
     if (!blog) {
-      const error = new Error('Blog not found');
-      error.statusCode = 404;
-      throw error;
+      return null;
     }
     return blog;
   }

@@ -9,9 +9,7 @@ export class GameService {
   async getGameBySlug(slug) {
     const game = await this.gameRepository.findBySlug(slug);
     if (!game) {
-      const error = new Error('Game not found');
-      error.statusCode = 404;
-      throw error;
+      return null;
     }
     const mappedGame = {
       ...game,

@@ -13,9 +13,7 @@ export class RatingService {
   async getRatingById(id) {
     const rating = await this.ratingRepository.findById(id);
     if (!rating) {
-      const error = new Error('Rating not found');
-      error.statusCode = 404;
-      throw error;
+      return null;
     }
     return rating;
   }

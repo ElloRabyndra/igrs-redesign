@@ -23,6 +23,13 @@ export class BlogController {
         throw error;
       }
       const blog = await this.blogService.getBlogBySlug(slug);
+
+      if (!blog) {
+        const error = new Error('Blog not found');
+        error.statusCode = 404;
+        throw error;
+      }
+
       return successResponse(res, blog, 'Blog retrieved successfully');
     } catch (error) {
       next(error);

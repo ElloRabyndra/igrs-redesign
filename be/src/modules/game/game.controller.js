@@ -23,6 +23,13 @@ export class GameController {
         throw error;
       }
       const game = await this.gameService.getGameBySlug(slug);
+      
+      if (!game) {
+        const error = new Error('Game not found');
+        error.statusCode = 404;
+        throw error;
+      }
+
       return successResponse(res, game, 'Game retrieved successfully');
     } catch (error) {
       next(error);
