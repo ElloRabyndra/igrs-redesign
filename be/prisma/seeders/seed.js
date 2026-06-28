@@ -1,7 +1,7 @@
 import { PrismaClient } from '@prisma/client';
-import { seedRatings } from './seeders/rating.seeder.js';
-import { seedGames } from './seeders/game.seeder.js';
-import { seedBlogs } from './seeders/blog.seeder.js';
+import { seedRatings } from './rating.seeder.js';
+import { seedGames } from './game.seeder.js';
+import { seedBlogs } from './blog.seeder.js';
 
 const prisma = new PrismaClient();
 
